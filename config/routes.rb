@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  resources :cases
-  resources :clients
+  resources :cases, :clients
   devise_for :users
-  root 'pages#home'
+  root "pages#home"
   
 
 
