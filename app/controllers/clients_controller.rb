@@ -8,6 +8,7 @@ class ClientsController < ApplicationController
 
   # GET /clients/1
   def show
+    @clients = Client.find(params[:id])
   end
 
   # GET /clients/new

@@ -10,7 +10,29 @@
     <%= f.label :last_name %><br>
     <%= f.text_field :last_name %>
   </p>
+   <p>
+    <%= f.label :date_of_birth %><br>
+    <%= f.text_field :date_of_birth %>
+  </p>
+   <p>
+    <%= f.label :social_security_number %><br>
+    <%= f.text_field :social_security_number %>
+  </p>
 
+  <p>
+  	<%= f.label :gender %><br>
+  	<div class="row">
+  	<div class="col-xs-2">
+		  <select class="form-control" placeholder=".col-xs-2">
+		  <option>-Select-</option>
+		  <option>Male</option>
+		  <option>Female</option>
+		  <option>4</option>
+		  <option>5</option>
+		</select>
+		</div>
+	</div>
+	</p>
  
  <%= render 'form' %>
 
