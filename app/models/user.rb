@@ -7,5 +7,5 @@ class User < ActiveRecord::Base
   has_many :jobs
   has_many :clients, through: :jobs
 
-  validates :name, presence: true
+  #validates :client_id, presence: true
 end
