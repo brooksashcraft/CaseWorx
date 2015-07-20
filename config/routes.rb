@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  resources :jobs
   resources :clients
+  resources :jobs
   devise_for :users
   root "pages#home"
-  get "clients" => "clients#index"
+  #get "clients" => "clients#index"
+
   
 
 
