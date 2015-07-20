@@ -33,12 +33,12 @@ class ClientsController < ApplicationController
 
 	# PATCH/PUT /clients/1
 	def update
-			if @client.update(client_params)
-				redirect_to @client, notice: 'Client was successfully updated.'
-			else
-				render :edit
-			end
+		if @client.update(client_params)
+			redirect_to @client, notice: 'Client was successfully updated.'
+		else
+			render :edit
 		end
+	end
 	
 
 	# DELETE /clients/1
@@ -57,6 +57,6 @@ class ClientsController < ApplicationController
 
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def client_params
-			params[:client]
+			params.require(:client).permit(:name)
 		end
 
