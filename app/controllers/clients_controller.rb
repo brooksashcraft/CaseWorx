@@ -21,13 +21,13 @@ class ClientsController < ApplicationController
 	end
 
 	# POST /clients
-		def create
+	def create
 		@client = current_user.clients.build(client_params)
-			if @client.save
-				redirect_to @client, notice: 'Client was successfully created.'
-			else
-				render action: 'new'
-			end
+
+		if @client.save
+			redirect_to @client, notice: 'Client was successfully created.'
+		else
+			render action: 'new'
 		end
 	end
 
@@ -39,17 +39,19 @@ class ClientsController < ApplicationController
 			render :edit
 		end
 	end
-	
+
 
 	# DELETE /clients/1
 	def destroy
 		@client.destroy
+
 		respond_to do |format|
 			redirect_to clients_url, notice: 'Client was successfully destroyed.'
 		end
 	end
 
 	private
+
 		# Use callbacks to share common setup or constraints between actions.
 		def set_client
 			@client = Client.find(params[:id])
@@ -57,6 +59,7 @@ class ClientsController < ApplicationController
 
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def client_params
-			params.require(:client).permit(:name)
+			params.require(:client).permit(:id)
 		end
 
+end
