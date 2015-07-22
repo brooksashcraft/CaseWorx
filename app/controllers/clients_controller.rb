@@ -13,7 +13,7 @@ class ClientsController < ApplicationController
 
 	# GET /clients/new
 	def new
-		@client = current_user.clients.build
+		@client = Client.new
 	end
 
 	# GET /clients/1/edit
@@ -22,8 +22,7 @@ class ClientsController < ApplicationController
 
 	# POST /clients
 	def create
-		@client = current_user.clients.build(client_params)
-
+		@client = Client.new(client_params)
 		if @client.save
 			redirect_to @client, notice: 'Client was successfully created.'
 		else
@@ -44,6 +43,7 @@ class ClientsController < ApplicationController
 
 	# DELETE /clients/1
 	def destroy
+    @client = Client.find(params[:id])
 		@client.destroy
 			redirect_to clients_url, notice: 'Client was successfully destroyed.'
 	end
