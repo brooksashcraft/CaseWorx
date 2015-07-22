@@ -33,21 +33,19 @@ class ClientsController < ApplicationController
 
 	# PATCH/PUT /clients/1
 	def update
-		if @client.update(client_params)
-			redirect_to @client, notice: 'Client was successfully updated.'
-		else
-			render :edit
-		end
+    @client = Client.find(params[:id])
+  		if @client.update(client_params)
+  			redirect_to @client, notice: 'Client was successfully updated.'
+  		else
+  			render :edit
+  		end
 	end
 
 
 	# DELETE /clients/1
 	def destroy
 		@client.destroy
-
-		respond_to do |format|
 			redirect_to clients_url, notice: 'Client was successfully destroyed.'
-		end
 	end
 
 	private
@@ -59,7 +57,7 @@ class ClientsController < ApplicationController
 
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def client_params
-			params.require(:client).permit(:id)
+			params.require(:client).permit(:description)
 		end
 
 end
