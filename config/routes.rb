@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :clients
+  resources :clients do
+    collection do
+      get :active
+    end
+  end
+
   resources :jobs
   devise_for :users
   root "pages#home"

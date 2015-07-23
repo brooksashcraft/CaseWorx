@@ -6,6 +6,11 @@ class ClientsController < ApplicationController
 		@clients = Client.all.order("created_at DESC")
 	end
 
+	def active
+		@clients = Client.where(status: :active).order("created_at DESC")
+		render :index
+	end
+
 	# GET /clients/1
 	def show
 		@clients = Client.find(params[:id])
@@ -32,7 +37,7 @@ class ClientsController < ApplicationController
 
 	# PATCH/PUT /clients/1
 	def update
-    @client = Client.find(params[:id])
+    	@client = Client.find(params[:id])
   		if @client.update(client_params)
   			redirect_to @client, notice: 'Client was successfully updated.'
   		else
@@ -43,7 +48,7 @@ class ClientsController < ApplicationController
 
 	# DELETE /clients/1
 	def destroy
-    @client = Client.find(params[:id])
+    	@client = Client.find(params[:id])
 		@client.destroy
 			redirect_to clients_url, notice: 'Client was successfully destroyed.'
 	end
