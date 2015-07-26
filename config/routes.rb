@@ -8,9 +8,6 @@ Rails.application.routes.draw do
   resources :jobs
   devise_for :users
   root "pages#home"
-  #get "clients" => "clients#index"
-
-  
 
 
   # The priority is based upon order of creation: first created -> highest priority.
