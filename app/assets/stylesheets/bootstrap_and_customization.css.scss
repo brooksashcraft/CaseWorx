@@ -1,4 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:500);
 
+$font-family: 'Raleway', sans-serif;
 $navbar-height: 				50px;
 $navbar-default-brand-color:	#64a9e1;
 $navbar-default-bg:				#E5E5E5;
@@ -10,6 +12,10 @@ $jumbotron-bg:					#E5E5E5;
 
 @import "bootstrap-sprockets";
 @import 'bootstrap';
+
+.navbar-brand {
+     font-weight: medium;
+}
 
 
 body {
