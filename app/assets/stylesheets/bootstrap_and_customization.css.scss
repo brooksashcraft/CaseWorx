@@ -1,15 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:500);
 
-
 $font-family: 	 'Raleway', sans-serif;
 $navbar-height: 									50px;
 $navbar-default-brand-color:	 #64a9e1;
 $navbar-default-bg:						 #E5E5E5;
 $brand-primary:								 #64a9e1;
 $jumbotron-bg:								 #E5E5E5;
-
-
-
 
 
 @import "bootstrap-sprockets";
@@ -19,10 +15,19 @@ $jumbotron-bg:								 #E5E5E5;
      font-weight: medium;
 }
 
+.navbar-brand img {
+	max-height: 50px;
+}
+
 
 body {
   padding-top: 0px;
   padding-bottom: 20px;
+}
+
+.login h2 {
+	color: #64a9e1;
+	font-size: 50px;
 }
 
 .header,

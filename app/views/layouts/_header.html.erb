@@ -14,8 +14,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
+      <% if current_user.nil? %>
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "Sign Up", new_registration_path(:user) %></li>
+      <% end %>
         <% if user_signed_in? %>
           <li>
             <%= link_to new_client_path do %>
