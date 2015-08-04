@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
-  resources :clients do
-    collection do
-      get :active
-    end
-  end
-
+  resources :clients 
   resources :jobs
   devise_for :users
   root "clients#index"
